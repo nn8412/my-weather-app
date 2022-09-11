@@ -1,0 +1,32 @@
+body {
+  font-family: "Rock Salt", cursive;
+}
+
+.timedate {
+  position: fixed;
+  right: 5px;
+  top: -5px;
+}
+.cityname {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 40px;
+}
+.card {
+  border: none !important;
+  margin-bottom: 40px;
+}
+.currenticon {
+  font-size: 80px;
+}
+.currenttemp {
+  font-size: 65px;
+}
+.extrainfo {
+  text-align: right;
+  font-weight: bold;
+}
+.card-text {
+  font-size: 30px;
+}
