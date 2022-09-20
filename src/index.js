@@ -6,7 +6,7 @@ function citySearch(event) {
   let nameResult = document.querySelector("h2");
   nameResult.innerHTML = `${city}`;
   let apiKey = `c95d60a1e3adbeb286133f1ebebc2579`;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(url).then(getTemp);
 }
 
@@ -16,7 +16,7 @@ nameChange.addEventListener("submit", citySearch);
 function getTemp(response) {
   let mainTemp = Math.round(response.data.main.temp);
   let tempToday = document.querySelector("#temp-display");
-  tempToday.innerHTML = `${mainTemp}°F`;
+  tempToday.innerHTML = `${mainTemp}`;
   let description = document.querySelector("h4");
   description.innerHTML = response.data.weather[0].description;
 }
