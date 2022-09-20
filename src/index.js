@@ -23,6 +23,12 @@ function getTemp(response) {
   humidity.innerHTML = response.data.main.humidity;
   let windSpeed = document.querySelector("#current-speed");
   windSpeed.innerHTML = response.data.wind.speed;
+  let iconElement = document.querySelector("#currenticon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let now = new Date();
