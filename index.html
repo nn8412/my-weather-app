@@ -18,136 +18,129 @@
       href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
       rel="stylesheet"
     />
-  <script src="https://kit.fontawesome.com/d289fb1eee.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/d289fb1eee.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
-      <form class="searchbox" id = "search-form">
-        <input type="text"  id = "city-input" placeholder="Enter city here" />
-        <input type="submit" value="Search" />
-      </form>
+      <div class="weather-wrapper">
+        <div class="weather-app">
+          <div class="row">
+            <div class="col-6">
+              <form class="searchbox" id="search-form">
+                <input
+                  type="text"
+                  id="city-input"
+                  placeholder="Enter city here"
+                />
+                <input type="submit" value="Search" />
+              </form>
+            </div>
+            <div class="col-6">
+              <div class="timedate">
+                <span id="current-date"> Sunday Aug. 7, 2022 </span>
+                <br />
+                Last updated <span id="current-time"> 6:00PM </span>
+              </div>
+            </div>
+            <br />
+            <h2 class="cityname">City Name Here</h2>
+            <br />
 
-      <div class="timedate"> <span id ="current-date"> Sunday Aug. 7, 2022 </span>
-      <br/>
-      <span id = "current-time"> 6:00PM </span> </div>
-      <br />
-      <div class="card">
-        <div class="card-body">
-          <h2 class="cityname">Alphaville</h2>
-        </div>
-      </div>
-    
-      <div class="row">
-        <div class="col-3">
-          <div class="card" style="width: 18rem;">
-            <div class="currenticon">
-              🌤
+            <div class="row">
+              <div class="col-6">
+                <img
+                  src="img/sunbehindcloud.jpg"
+                  alt="mostly sunny"
+                  height="100px"
+                  width="100px"
+                  id="currenticon"
+                />
+                <strong id="temp-display">87</strong
+                ><span class="units">°C | <a href="#"></a>°F</span>
+              </div>
+
+              <div class="col-6">
+                <ul>
+                  <li>Feels like: <span id="feels-like"> 90</span>°F</li>
+                  <li>Humidity: <span id="current-humidity">64</span>%</li>
+                  <li>Wind: <span id="current-speed">0.62</span> km/h</li>
+                </ul>
+              </div>
+            </div>
+            <hr />
+            <div class="forecastHeader">
+              <h5>5 Day Forecast</h5>
+            </div>
+            <div class="forecast-container">
+              <div class="row">
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h6 class="card-title">Monday</h6>
+                      <p>8/8</p>
+                      <p class="card-text">🌦</p>
+                      <p>86°/ 70°</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h6 class="card-title">Tuesday</h6>
+                      <p>8/9</p>
+                      <p class="card-text">🌦</p>
+                      <p>86°/ 70°</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h6 class="card-title">Wednesday</h6>
+                      <p>8/10</p>
+                      <p class="card-text">🌦</p>
+                      <p>86°/ 71°</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h6 class="card-title">Thursday</h6>
+                      <p>8/11</p>
+                      <p class="card-text">🌦</p>
+                      <p>82°/68°</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h6 class="card-title">Friday</h6>
+                      <p>8/12</p>
+                      <p class="card-text">⛅</p>
+                      <p>88°/ 66°</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="col-3">
-          <div class="card" style="width: 18rem;">
-            <div class="currenttemp" id = "temp-display">
-              87° F
-              </div>
-              <br/>
-              <div>
-              <h4>Mostly Sunny</h4>
-              </div>
-          
-          </div>
-        </div>
-        
-        <div class="col-6">
-          <div class="card" style="width: 18rem;">
-            <div class="extrainfo">
-              <p> High/Low: 86°/ 72° </p>
-              <br/>
-              <p>Precipitation: 24%</p>
-              <br/>
-              <p>Wind: ESE 4mph</p>
-              </div>
-            </div>
-          </div>
+        <small
+          ><a href="https://github.com/nn8412/my-weather-app" target="_blank">
+            Open-source Code
+          </a>
+          by Nina Nketiah</small
+        >
       </div>
     </div>
-    <hr>
-    
-    <div class="row">
-      <div class="col-4">
-    <div class="card">
-  <div class="days">
-    <h5>5 Day Forecast </h3>
-  </div>
-</div>
-</div>
-</div>
-<div class="container">
-<div class="row">
-  <div class="col">
-      <div class="card text-center">
-  <div class="card-body">
-    <h6 class="card-title">Monday</h6>
-    <p>8/8</p>
-    <p class="card-text">🌦 </p>
-    <p> 86°/ 70°</p>
-</div>
-  </div>
-</div>
 
-  <div class="col">
-<div class="card text-center">
-  <div class="card-body">
-    <h6 class="card-title">Tuesday</h6>
-    <p>8/9</p>
-    <p class="card-text">🌦 </p>
-    <p> 86°/ 70°</p>
-</div>
-  </div>
-</div>
-<div class="col">
-<div class="card text-center">
-  <div class="card-body">
-    <h6 class="card-title">Wednesday</h6>
-    <p>8/10</p>
-    <p class="card-text">🌦 </p>
-    <p> 86°/ 71°</p>
-</div>
-  </div>
-</div>
-<div class="col">
-<div class="card text-center" >
-  <div class="card-body">
-    <h6 class="card-title">Thursday</h6>
-    <p>8/11</p>
-    <p class="card-text">🌦 </p>
-    <p> 82°/68°</p>
-</div>
-  </div>
-</div>
-<div class="col">
-<div class="card text-center">
-  <div class="card-body">
-    <h6 class="card-title">Friday</h6>
-    <p>8/12</p>
-    <p class="card-text">⛅ </p>
-    <p> 88°/ 66°</p>
-</div>
-  </div>
-
-</div>
-
-</div>
-</div>
-<p>
-<a href = "https://github.com/nn8412/my-weather-app" target="_blank"> Open-source Code </a> by Nina Nketiah</p>
-
-    </div>
-
-    <script src="src/index.js">
-
-    </script>
+    <script src="src/index.js"></script>
   </body>
 </html>
