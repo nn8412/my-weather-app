@@ -19,6 +19,10 @@ function getTemp(response) {
   tempToday.innerHTML = `${mainTemp}`;
   let description = document.querySelector("h4");
   description.innerHTML = response.data.weather[0].description;
+  let humidity = document.querySelector("#current-humidity");
+  humidity.innerHTML = response.data.main.humidity;
+  let windSpeed = document.querySelector("#current-speed");
+  windSpeed.innerHTML = response.data.wind.speed;
 }
 
 let now = new Date();
