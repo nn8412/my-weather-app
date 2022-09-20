@@ -2,31 +2,45 @@ body {
   font-family: "Rock Salt", cursive;
 }
 
+.weather-wrapper {
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+.weather-app {
+  background-color: #c4fff9;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
 .timedate {
-  position: fixed;
-  right: 5px;
-  top: -5px;
+  margin-left: 165px;
 }
 .cityname {
-  display: block;
-  margin: 0 auto;
   text-align: center;
-  font-size: 40px;
+  padding-top: 15px;
+  margin-bottom: 20px;
 }
+
+li {
+  list-style: none;
+  margin-top: 10px;
+  margin-left: 30px;
+  line-height: 1;
+}
+
 .card {
   border: none !important;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
-.currenticon {
-  font-size: 80px;
+
+.card-body {
+  background-color: #c4fff9;
 }
-.currenttemp {
-  font-size: 65px;
-}
-.extrainfo {
-  text-align: right;
-  font-weight: bold;
-}
+
 .card-text {
   font-size: 30px;
 }
