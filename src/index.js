@@ -16,20 +16,48 @@ nameChange.addEventListener("submit", citySearch);
 function getTemp(response) {
   let mainTemp = Math.round(response.data.main.temp);
   let tempToday = document.querySelector("#temp-display");
-  tempToday.innerHTML = `${mainTemp}`;
   let description = document.querySelector("h4");
-  description.innerHTML = response.data.weather[0].description;
   let humidity = document.querySelector("#current-humidity");
-  humidity.innerHTML = response.data.main.humidity;
   let windSpeed = document.querySelector("#current-speed");
-  windSpeed.innerHTML = response.data.wind.speed;
   let iconElement = document.querySelector("#currenticon");
+
+  celsiusTemperature = response.data.main.temp;
+
+  tempToday.innerHTML = `${mainTemp}`;
+  description.innerHTML = response.data.weather[0].description;
+  humidity.innerHTML = response.data.main.humidity;
+  windSpeed.innerHTML = response.data.wind.speed;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp-display");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temp-display");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 let now = new Date();
 let days = [

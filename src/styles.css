@@ -17,19 +17,31 @@ body {
 }
 
 .timedate {
-  margin-left: 165px;
+  margin-left: 160px;
 }
 .cityname {
   text-align: center;
   padding-top: 15px;
   margin-bottom: 20px;
 }
+h4 {
+  text-transform: capitalize;
+}
+
+ul {
+  margin-top: 25px;
+}
 
 li {
   list-style: none;
-  margin-top: 10px;
-  margin-left: 30px;
-  line-height: 1;
+  margin-left: 100px;
+  padding: 0;
+}
+
+.weather-temp img {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
 }
 
 .weather-temp strong {
@@ -38,10 +50,19 @@ li {
   font-weight: 400;
 }
 
-.units {
+.weather-temp .units {
   position: relative;
   font-size: 16;
   top: -34px;
+}
+
+.weather-temp .active {
+  color: black;
+  cursor: default;
+}
+
+.weather-temp .active:hover {
+  text-decoration: none;
 }
 
 .card {
