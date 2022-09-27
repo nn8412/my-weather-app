@@ -114,6 +114,8 @@ function getTemp(response) {
 
   celsiusTemperature = response.data.main.temp;
 
+  displayForecast();
+
   tempToday.innerHTML = `${mainTemp}`;
   description.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
