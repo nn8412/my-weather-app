@@ -80,7 +80,7 @@ function displayForecast(response) {
                   <span class="forecast-temperature-min">12°</span>
                 </div>
               </div>
-            </div>
+            
     `;
   });
   forecastHTML = forecastHTML + `</div>`;
