@@ -65,15 +65,21 @@ li {
   text-decoration: none;
 }
 
-.card {
-  border: none !important;
-  margin-bottom: 20px;
+.forecast-container {
+  margin-top: 20px;
+  text-align: center;
 }
 
-.card-body {
-  background-color: #c4fff9;
+.forecast-date {
+  font-size: 16px;
+  color: #000;
+  opacity: 0.6;
 }
 
-.card-text {
-  font-size: 30px;
+.forecast-temperatures {
+  font-size: 15px;
+}
+
+.forecast-temperature-min {
+  opacity: 0.6;
 }
