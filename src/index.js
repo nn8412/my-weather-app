@@ -59,7 +59,7 @@ function displayTime() {
 displayDate();
 displayTime();
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -103,6 +103,14 @@ function citySearch(event) {
 let nameChange = document.querySelector("#search-form");
 nameChange.addEventListener("submit", citySearch);
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `c95d60a1e3adbeb286133f1ebebc2579`;
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function getTemp(response) {
   let mainTemp = Math.round(response.data.main.temp);
   let tempToday = document.querySelector("#temp-display");
@@ -113,8 +121,6 @@ function getTemp(response) {
 
   celsiusTemperature = response.data.main.temp;
 
-  displayForecast();
-
   tempToday.innerHTML = `${mainTemp}`;
   description.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
@@ -124,6 +130,8 @@ function getTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function showFahrenheitTemperature(event) {
